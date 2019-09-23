@@ -25,17 +25,24 @@ class TSTest(unittest.TestCase):
         self._is_score("Love Fifteen")
 
     def test_love_thirty(self):
-        self._player2_scored(２)
+        self._player2_scored(2)
         self._is_score("Love Thirty")
 
     def test_love_forty(self):
-        self._player2_scored(３)
+        self._player2_scored(3)
         self._is_score("Love Forty")
 
-
-    def test_fifteen_all
-
-
+    def test_fifteen_all(self):
+        self._player1_scored(1)
+        self._player2_scored(1)
+        self._is_score("Fifteen All")
+        
+    def test_fifteen_thirty(self):
+        self._player1_scored(1)
+        self._player2_scored(2)
+        self._is_score("Fifteen Thirty")
+        
+        
     # utils func
     def _is_score(self, score):
         self.assertEqual(
