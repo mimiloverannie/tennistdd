@@ -24,13 +24,17 @@ class TSTest(unittest.TestCase):
         self._player2_scored(1)
         self._is_score("Love Fifteen")
 
+    def test_love_thirty(self):
+        self._player2_scored(２)
+        self._is_score("Love Thirty")
+
+    def test_love_forty(self):
+        self._player2_scored(３)
+        self._is_score("Love Forty")
+
+
     def test_fifteen_all
 
-    
-    
-    
-    
-    
 
     # utils func
     def _is_score(self, score):
