@@ -36,13 +36,33 @@ class TSTest(unittest.TestCase):
         self._player1_scored(1)
         self._player2_scored(1)
         self._is_score("Fifteen All")
-        
-    def test_fifteen_thirty(self):
+
+    def test_deuce(self):
+        self._deuce()
+        self._is_score("Deuce")
+
+    def test_player1_adv(self):
+        self._deuce()
         self._player1_scored(1)
+        self._is_score("player1 adv")
+
+    def test_player2_adv(self):
+        self._deuce()
+        self._player2_scored(1)
+        self._is_score("player2 adv")
+
+    def test_player1_win(self):
+        self._deuce()
+        self._player1_scored(2)
+        self._is_score("player1 win")
+
+    def test_player2_win(self):
+        self._player1_scored(4)
         self._player2_scored(2)
-        self._is_score("Fifteen Thirty")
-        
-        
+        self._is_score("player1 win")
+
+
+
     # utils func
     def _is_score(self, score):
         self.assertEqual(
@@ -54,13 +74,15 @@ class TSTest(unittest.TestCase):
         for _ in range(times):
             self.ts.a_scored()
 
-    def _penny_scored(self, times):
+    def _player2_scored(self, times):
         for _ in range(times):
             self.ts.b_scored()
 
     def _deuce(self):
         self._player1_scored(3)
         self._player2_scored(3)
+
+
 
 
 if __name__== "__main__":
